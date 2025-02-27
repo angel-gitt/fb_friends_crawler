@@ -6,12 +6,18 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Configurar ChromeOptions para usar un perfil persistente
 options = webdriver.ChromeOptions()
 options.add_argument("--user-data-dir=./chrome_profile")
 
-driver = webdriver.Chrome(options=options)
+# Inicializar el servicio de ChromeDriver con webdriver-manager
+service = ChromeService(executable_path=ChromeDriverManager().install())
+
+# Inicializar el controlador de Chrome con las opciones y el servicio
+driver = webdriver.Chrome(service=service, options=options)
 
 driver.maximize_window()
 
