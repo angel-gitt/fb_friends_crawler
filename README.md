@@ -3,7 +3,7 @@ Crawler.py is a crawler to obtain the friends URLS for a set of Facebook users
 In the same folder, you should create a file called profiles.csv, containing each user profile in one line (without header)
 Then you can create a venv, install the requirements and run the crawler.
     
-    ```bash
+    ```
     
     python3 -m venv .venv
     
