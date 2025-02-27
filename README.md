@@ -4,8 +4,11 @@ In the same folder, you should create a file called profiles.csv, containing eac
 Then you can create a venv, install the requirements and run the crawler.
     ```bash
     python3 -m venv .venv
+    
     source .venv/bin/activate
+    
     pip install-r requirements.txt
+    
     python3 crawler.py
     ```
 It asks for your email and password the first time, to init facebook session. Then the browser profile is saved in chrome_profile/, and it loads with the facebook session up in upcoming executions
